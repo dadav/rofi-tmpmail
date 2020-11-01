@@ -14,8 +14,9 @@ function notify() {
 
 function term() {
   t="xterm"
-  for t in kitty urxvt termine xterm; do
+  for t in kitty urxvt termite xterm; do
     if command -v $t >/dev/null 2>&1; then
+      # shellcheck disable=SC2048,SC2086
       exec $t -e $*
     fi
   done
